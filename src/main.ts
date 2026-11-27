@@ -1,24 +1,19 @@
 import { Component, signal, inject, ApplicationConfig } from '@angular/core';
-import { Routes, Router, provideRouter, RouterOutlet } from '@angular/router';
+import { Routes, Router } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
-import { productRoutes } from './app/products/products.routes';
 
 const routes: Routes =[
-  {
-    path: '',
-    loadChildren: () => productRoutes,
-  },
 ];
 
 const appConfig: ApplicationConfig = {
-  providers: [provideHttpClient(), provideRouter(routes)],
+  providers: [provideHttpClient()],
 };
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: '<router-outlet></router-outlet>'
+  imports: [],
+  template: ''
 })
 export class App {
   router = inject(Router)
