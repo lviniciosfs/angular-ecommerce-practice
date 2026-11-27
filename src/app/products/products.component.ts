@@ -11,10 +11,11 @@ import {
   BehaviorSubject,
   combineLatest,
 } from 'rxjs';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-products',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, RouterLink, RouterOutlet],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })

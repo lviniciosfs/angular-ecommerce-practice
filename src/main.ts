@@ -1,13 +1,13 @@
 import { Component, signal, inject, ApplicationConfig } from '@angular/core';
 import { Routes, Router, provideRouter, RouterOutlet } from '@angular/router';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { Products } from './app/products/products.component';
 import { provideHttpClient } from '@angular/common/http';
+import { productRoutes } from './app/products/products.routes';
 
 const routes: Routes =[
   {
-    path: 'products',
-    component: Products,
+    path: '',
+    loadChildren: () => productRoutes,
   },
 ];
 

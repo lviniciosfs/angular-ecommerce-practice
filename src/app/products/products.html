@@ -1,5 +1,5 @@
 @if(products$ | async; as p){ @for(pr of p; track pr.id){
-<p>{{pr.title}}</p>
+<p [routerLink]="['/', pr.id]">{{pr.title}}</p>
 } }
 <select (change)="onSelect($event)">
   <option value="10">10</option>
@@ -7,3 +7,4 @@
   <option value="30">30</option>
 </select>
 <button (click)="next()">Next Page</button>
+<router-outlet></router-outlet>
